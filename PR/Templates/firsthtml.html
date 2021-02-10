@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alike Aside</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="row">
+        <div id="col-1">
+            
+            <div><img src="{% static 'images/capture2.png' %}" alt= "logo" style="height:210px;"></div>
+        </div>
+        <div id="col-2">
+            <h1>ALIKE ASIDE</h1>
+        </div>
+    </div>
+        <form method="POST" action="{% url 'get_info' %}" style="margin-left: 450px;margin-top: 100px">               {% csrf_token %}
+            
+            <input type="text" name="keyword" class="question" id="keyword" required autocomplete="off" />
+              <label for="keyword"><span>Enter keyword</span></label>
+              <input type="text" name="num" class="question" id="num" required autocomplete="off" />
+              <label for="num"><span>Enter number of tweets</span></label>
+              <input type="submit" value="Submit!" />
+            
+        </form>
+
+</body>
+</html>
